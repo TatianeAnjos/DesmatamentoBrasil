@@ -32,14 +32,17 @@ public class ApiService {
 		HttpGet httpget = new HttpGet(url);
 
 		try {
-			logger.info("Iniciando a busca na API Prodes");
+			logger.info("Iniciando a busca na API Prodes URL: {}", url);
 			HttpResponse response = httpclient.execute(httpget);
 			if (response.getStatusLine().getStatusCode() == HttpStatus.SC_OK) {
 				HttpEntity entity = response.getEntity();
 				String content = EntityUtils.toString(entity);
 				RetornoApiProdes dto = gson.fromJson(content, RetornoApiProdes.class);
-				logger.info("Dados encontrados");
+				logger.info("Dados encontrados, retornando");
 				return dto;
+				//teste 
+				
+				
 			}
 
 		} catch (ClientProtocolException e) {

@@ -26,23 +26,6 @@ public class DadosDesmatamentoResource {
 	@Autowired
 	private DadosDesmatamentoService service;
 	
-	@Autowired
-	private ApiService service1;
-	
-//	@GetMapping
-//	public ResponseEntity<List<DadosDesmatamento>> buscarDadosDesmatamento(){
-//		logger.info("Iniciando Chamada Na Api Local");	
-//		List<DadosDesmatamento> lsDadosDesmatamento = service.buscarDadosDesmatamento();
-//		
-//		logger.info("Api Local -> Retornando dados tratados");	
-//		return ResponseEntity.ok().body(lsDadosDesmatamento);
-//	}
-//	
-//	@GetMapping("/teste")
-//	public ResponseEntity<RetornoApiProdes> buscarDadosProdes(){
-//		RetornoApiProdes lsDadosDesmatamento = service1.integracaoApiProdes(url);
-//		return ResponseEntity.ok().body(lsDadosDesmatamento);
-//	}
 	
 	@GetMapping(value = "/filtrar")	
 	public ResponseEntity<List<DadosDesmatamento>> buscarDadosDesmatamentoComFiltro
@@ -52,6 +35,7 @@ public class DadosDesmatamentoResource {
 		List<DadosDesmatamento> lsDadosDesmatamento = service.buscarDadosDesmatamentoComFiltro(ano, uf);
 		
 		logger.info("Api Local -> Retornando dados tratados");	
+		logger.info("SUCESSO!!!");	
 		return ResponseEntity.ok().body(lsDadosDesmatamento);
 	}
 	

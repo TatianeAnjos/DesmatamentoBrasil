@@ -33,9 +33,8 @@ public class MapperDadosDesmatamento {
 				dt.setAreaMetros(Double.parseDouble(d.format(feature.getAttributes().getAreameters())));
 				dt.setTamanhoForma(Double.parseDouble(d.format(feature.getAttributes().getShape_Length())));
 				dt.setUf(feature.getAttributes().getUf());
-//				dt.setAreaForma(feature.getAttributes().getShape_Area());
-//				dt.setAreaMetros(feature.getAttributes().getAreameters());
-//				dt.setTamanhoForma(feature.getAttributes().getShape_Length());
+				
+				logger.info("Adicionando registro {} na lista", dt.getId() );
 
 				lsDados.add(dt);
 			}
